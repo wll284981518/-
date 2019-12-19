@@ -12,6 +12,10 @@ import Edit from "../components/Edit/Edit";
 import Study from "../components/Study/Study";
 //我的组件
 import My from "../components/My/My";
+
+import Information from "../components/My/Information";
+import Attention from "../components/My/Attention";
+import Collection from "../components/My/Collection";
 Vue.use(Router);
 
 export default new Router({
@@ -44,13 +48,26 @@ export default new Router({
         {
           path:"/my",
           name:"My",
-          component:My,
+          component:My
         },
         {
           path:"/",
           redirect:"/home"
         }
       ]
-    },
+    	},
+    	{
+					path:"/information",
+					component:Information
+				},
+				{
+					path:"/attention",
+					component:Attention
+				},
+				{
+					path:"/collection",
+					component:Collection
+				}
+				
   ]
 })

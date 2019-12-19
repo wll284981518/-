@@ -15,7 +15,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
   body,html,.index{
     width: 100%;
     height: 100%;
