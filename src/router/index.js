@@ -32,10 +32,12 @@ import Sms from "../components/My/Login/sms-login";
 import Setpass from "../components/My/Login/set-pass";
 // 设置信息组件
 import Setmessage from "../components/My/Login/set-message";
+
 // 登录详情页
 import Information from "../components/My/Information";
 import Attention from "../components/My/Attention";
 import Collection from "../components/My/Collection";
+
 
 
 
@@ -63,6 +65,7 @@ export default new Router({
           name:"Study",
           component:Study,
         },
+        //练习下的路由
         {
           path:"/edit",
           name:"Edit",
@@ -117,7 +120,8 @@ export default new Router({
           	component:English,
           	}
           	]
-          },
+         },
+  
         {
           path:"/my",
           name:"My",
@@ -141,7 +145,8 @@ export default new Router({
 					path:"/collection",
 					component:Collection
 				}
-				,
+				
+  ,
     {
       path:"/login",
       name:'Login',
@@ -163,6 +168,5 @@ export default new Router({
       name:"set-message",
       component:Setmessage
     }
-				
   ]
 })
