@@ -3,6 +3,10 @@ import App from './App'
 import router from './router'
 import Rem from "../static/js/rem"
 Vue.config.productionTip = false;
+import 'vant/lib/index.css';
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
 
 /* eslint-disable no-new */
 new Vue({
