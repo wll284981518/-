@@ -22,6 +22,16 @@ import English from"../components/Edit/Edit-kdzl/English"
 import Study from "../components/Study/Study";
 //我的组件
 import My from "../components/My/My";
+// 登录组件
+import Login from "../components/My/Login/Login";
+// 找回密码组件
+import Forget from "../components/My/Login/forget-pass";
+// 验证登录组件
+import Sms from "../components/My/Login/sms-login";
+// 设置密码组件
+import Setpass from "../components/My/Login/set-pass";
+// 设置信息组件
+import Setmessage from "../components/My/Login/set-message";
 Vue.use(Router);
 
 export default new Router({
@@ -112,5 +122,26 @@ export default new Router({
         }
       ]
     },
+    {
+      path:"/login",
+      name:'Login',
+      component:Login
+    },{
+      path:"/forget",
+      name:"forget",
+      component:Forget
+    },{
+      path:"/sms-login",
+      name:"sms-login",
+      component:Sms
+    },{
+      path:"/set-pass",
+      name:"set-pass",
+      component:Setpass
+    },{
+      path:"/set-message",
+      name:"set-message",
+      component:Setmessage
+    }
   ]
 })
