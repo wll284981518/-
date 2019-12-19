@@ -4,6 +4,10 @@ import Router from 'vue-router'
 import Index from "../components/Index/Index";
 //首页组件
 import Home from "../components/home/Home";
+//首页详情页
+import Xiang from "@/components/home/Xiang"
+//引入立即报名的页面
+import Bao from "@/components/home/Bao"
 //课程组件
 import Course from "../components/Course/Course";
 //练习组件
@@ -39,7 +43,7 @@ import Attention from "../components/My/Attention";
 import Collection from "../components/My/Collection";
 
 // 我是课程组件的详情页
-import Details from "../components/Course/Details"
+// import Details from "../components/Course/Details"
 
 
 Vue.use(Router);
@@ -131,9 +135,9 @@ export default new Router({
           path:"/",
           redirect:"/home"
         }
-      ]
-    	},
-    	{
+        ]
+        },
+        {
 					path:"/information",
 					component:Information
 				},
@@ -144,29 +148,41 @@ export default new Router({
 				{
 					path:"/collection",
 					component:Collection
-				}
-				
-  ,
-    {
-      path:"/login",
-      name:'Login',
-      component:Login
-    },{
-      path:"/forget",
-      name:"forget",
-      component:Forget
-    },{
-      path:"/sms-login",
-      name:"sms-login",
-      component:Sms
-    },{
-      path:"/set-pass",
-      name:"set-pass",
-      component:Setpass
-    },{
-      path:"/set-message",
-      name:"set-message",
-      component:Setmessage
-    }
+				} ,
+        {
+          path:"/login",
+          name:'Login',
+          component:Login
+        },
+        {
+          path:"/forget",
+          name:"forget",
+          component:Forget
+        },
+        {
+          path:"/sms-login",
+          name:"sms-login",
+          component:Sms
+        },
+        {
+          path:"/set-pass",
+          name:"set-pass",
+          component:Setpass
+        },
+        {
+          path:"/set-message",
+          name:"set-message",
+          component:Setmessage
+        },
+        {
+          path:"/tearch",
+          name:"tearch",
+          component:Xiang,
+        },
+         {
+          path:"/bao",
+          name:"bao",
+          component:Bao
+        }
   ]
 })
