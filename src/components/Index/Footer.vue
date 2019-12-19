@@ -32,7 +32,7 @@
 </script>
 
 <style lang="scss">
-   .foot{
+  .foot{
      width: 100%;
      height: 0.7rem;
      border-top: 1px solid #e1e1e1;
