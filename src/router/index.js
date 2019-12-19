@@ -1,4 +1,4 @@
-import Vue from 'vue'
+﻿import Vue from 'vue'
 import Router from 'vue-router'
 //总组件
 import Index from "../components/Index/Index";
@@ -38,7 +38,8 @@ import Information from "../components/My/Information";
 import Attention from "../components/My/Attention";
 import Collection from "../components/My/Collection";
 
-
+// 我是课程组件的详情页
+import Details from "../components/Course/Details"
 
 
 Vue.use(Router);
@@ -70,7 +71,6 @@ export default new Router({
           path:"/edit",
           name:"Edit",
           component:Edit,
-          
         },
         //考点专练路由
         {
