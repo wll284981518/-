@@ -22,4 +22,7 @@ body,html,#app{
   padding: 0;
   list-style: none;
 }
+body{
+  font-size: 0.16rem;
+}
 </style>
