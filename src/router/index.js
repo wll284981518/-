@@ -1,21 +1,19 @@
-import Vue from 'vue'
+﻿import Vue from 'vue'
 import Router from 'vue-router'
 //总组件
 import Index from "../components/Index/Index";
 //首页组件
 import Home from "../components/home/Home";
+//首页详情页
+import Xiang from "@/components/home/Xiang"
+//引入立即报名的页面
+import Bao from "@/components/home/Bao"
 //课程组件
 import Course from "../components/Course/Course";
 //练习组件
 import Edit from "../components/Edit/Edit";
 import EditKdzl from"../components/Edit/Edit-kdzl/Edit-kdzl"
 import TextGit from"../components/Edit/Edit-kdzl/TextGit"
-import Edittjlx from"../components/Edit/Edit-tjlx/Edit-tjlx"
-import Editfzmk from"../components/Edit/Edit-fzmk/Edit-fzmk"
-import Editctjl from"../components/Edit/Edit-ctjl/Edit-ctjl"
-import Editcpjl from"../components/Edit/Edit-cpjl/Edit-cpjl"
-import Editxtsc from"../components/Edit/Edit-xtsc/Edit-xtsc"
-
 //题库组件
 import Ples from"../components/Edit/Edit-kdzl/Ples"
 import Limit from"../components/Edit/Edit-kdzl/Limit"
@@ -38,6 +36,16 @@ import Sms from "../components/My/Login/sms-login";
 import Setpass from "../components/My/Login/set-pass";
 // 设置信息组件
 import Setmessage from "../components/My/Login/set-message";
+
+// 登录详情页
+import Information from "../components/My/Information";
+import Attention from "../components/My/Attention";
+import Collection from "../components/My/Collection";
+
+// 我是课程组件的详情页
+// import Details from "../components/Course/Details"
+
+
 Vue.use(Router);
 
 export default new Router({
@@ -116,63 +124,65 @@ export default new Router({
           	component:English,
           	}
           	]
-        },
-        {
-        		path:"/tjlx",
-          	name:"Edittjlx",
-          	component:Edittjlx,
-        },
-        {
-          path:"/fzmk",
-          name:"Editfzmk",
-          component:Editfzmk,
-        },
-       {
-        path:"/ctjl",
-        name:"Editctjl",
-        component:Editctjl,
-       },
-        {
-          path:"/cpjl",
-          name:"Editcpjl",
-          component:Editcpjl,
-       },
-       {
-        path:"/xtsc",
-        name:"Editxtsc",
-        component:Editxtsc,
-     },
+         },
+  
         {
           path:"/my",
           name:"My",
-          component:My,
+          component:My
         },
         {
           path:"/",
           redirect:"/home"
         }
-      ]
-    },
-    {
-      path:"/login",
-      name:'Login',
-      component:Login
-    },{
-      path:"/forget",
-      name:"forget",
-      component:Forget
-    },{
-      path:"/sms-login",
-      name:"sms-login",
-      component:Sms
-    },{
-      path:"/set-pass",
-      name:"set-pass",
-      component:Setpass
-    },{
-      path:"/set-message",
-      name:"set-message",
-      component:Setmessage
-    }
+        ]
+        },
+        {
+					path:"/information",
+					component:Information
+				},
+				{
+					path:"/attention",
+					component:Attention
+				},
+				{
+					path:"/collection",
+					component:Collection
+				} ,
+        {
+          path:"/login",
+          name:'Login',
+          component:Login
+        },
+        {
+          path:"/forget",
+          name:"forget",
+          component:Forget
+        },
+        {
+          path:"/sms-login",
+          name:"sms-login",
+          component:Sms
+        },
+        {
+          path:"/set-pass",
+          name:"set-pass",
+          component:Setpass
+        },
+        {
+          path:"/set-message",
+          name:"set-message",
+          component:Setmessage
+        },
+        {
+          path:"/tearch",
+          name:"tearch",
+          component:Xiang,
+        },
+         {
+          path:"/bao",
+          name:"bao",
+          component:Bao
+        }
   ]
 })
