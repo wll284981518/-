@@ -125,7 +125,28 @@
 
 <script>
  export default {
-        name: "My"
+		name: "My",
+		data(){
+			return{
+				list:JSON.parse(localStorage.getItem('dl'))||[]
+			}
+		}
+	
+		// beforeRouteEnter:function(to,from,next){
+		// 	// if(from.path=='/login'){
+		// 	// 	next()
+		// 	// }else{
+		// 	// 	next('/login')
+		// 	// }
+		// 	if(this.$store.state.dl){
+		// 		next('/login')
+		// 	}else{
+		// 		next()
+		// 	}
+			
+			
+			
+		// }
     }
 </script>
 

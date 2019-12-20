@@ -129,7 +129,10 @@ export default new Router({
         {
           path:"/my",
           name:"My",
-          component:My
+          component:My,
+          meta:{
+            type:'login'//是否需要判断登录
+          }
         },
         {
           path:"/",

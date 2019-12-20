@@ -27,9 +27,28 @@ Vue.use(Icon);
 //点击关注，提示已关注
 import { Toast } from 'vant';
 Vue.use(Toast);
+// 数字键盘
+import {NumberKeyboard} from 'vant';
+Vue.use(NumberKeyboard)
+// 全局路由守卫
+router.beforeEach((to, from, next) =>{
+  const type = to.meta.type
+  // 判断该路由是否需要登录权限
+  if (type === 'login') {
+    if (window.localStorage.getItem('login')) {
+      next()
+    } else {
+      next('/login')
+    }
+  } else {
+    next()  // 确保一定要有next()被调用
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   render: h => h(App)
 })
