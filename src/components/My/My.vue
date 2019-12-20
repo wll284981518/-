@@ -125,7 +125,6 @@
 
 <script>
  export default {
-<<<<<<< HEAD
         name: "My",
         methods:{
         	shezhi(){
@@ -134,15 +133,13 @@
         	yuk(){
         		this.$router.push('/study')
         	}
-        }
-=======
-		name: "My",
+        },
 		data(){
 			return{
 				list:JSON.parse(localStorage.getItem('dl'))||[]
 			}
 		}
->>>>>>> cc30be0c0d34b30f6b6796ecb5f385026bd6b960
+
     }
 </script>
 

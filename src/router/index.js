@@ -282,7 +282,7 @@ export default new Router({
       component: Ri
     },
     {
-<<<<<<< HEAD
+
       path:"/login",
       name:'Login',
       component:Login
@@ -307,12 +307,11 @@ export default new Router({
       path:"/setup",
       component:Setup
     },
-    
-=======
+    {
       path: "/details",
       name: "details",
       component: Details
     }
->>>>>>> cc30be0c0d34b30f6b6796ecb5f385026bd6b960
+
   ]
 })

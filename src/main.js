@@ -4,14 +4,12 @@ import router from './router'
 import Rem from "../static/js/rem"
 import 'element-ui/lib/theme-chalk/index.css';
 import { Checkbox, CheckboxGroup } from 'vant';
-import { DatetimePicker } from 'vant';
+
 import { ActionSheet } from 'vant';
-import { Popup } from 'vant';
 import {Calendar} from 'element-ui';
 Vue.use(Calendar)
-Vue.use(Popup);
 Vue.use(ActionSheet);
-Vue.use(DatetimePicker);
+
 Vue.use(Checkbox).use(CheckboxGroup)
 //--->引入store仓库
 import store from './store';
@@ -22,15 +20,13 @@ Vue.use(DropdownItem);
 //vant外部样式
 import 'vant/lib/index.css';
 import Vant from 'vant';
-<<<<<<< HEAD
+
 import 'vant/lib/index.css';
 
 import { Popup } from 'vant';
 import { Picker } from 'vant';
 //按钮
-import { Button } from 'vant';
 
-Vue.use(Button);
 //时间
 import { DatetimePicker } from 'vant';
 Vue.use(DatetimePicker);
@@ -39,8 +35,7 @@ import { Area } from 'vant';
 Vue.use(Area);
 Vue.use(Picker);
 Vue.use(Popup);
-=======
->>>>>>> cc30be0c0d34b30f6b6796ecb5f385026bd6b960
+
 Vue.use(Vant);
 //vant网络样式
 import "../src/assets/resetui.css"
