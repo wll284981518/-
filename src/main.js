@@ -12,7 +12,6 @@ Vue.use(Vant);
 import "../src/assets/resetui.css"
 //font awesome 字体样式
 import 'font-awesome/css/font-awesome.min.css'
-Vue.config.productionTip = false;
 //约课记录框架
 import { Tab, Tabs } from 'vant';
 Vue.use(Tab).use(Tabs);
@@ -27,9 +26,14 @@ Vue.use(Icon);
 //点击关注，提示已关注
 import { Toast } from 'vant';
 Vue.use(Toast);
+// 2019/12/20 ---付东飞Study组件-待上课请假vant框架
+import { Dialog } from 'vant';
+Vue.use(Dialog);
 /* eslint-disable no-new */
+Vue.config.productionTip = false;
 new Vue({
   el: '#app',
+  store,
   router,
   render: h => h(App)
 })

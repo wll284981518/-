@@ -1,14 +1,78 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+}
 
 .fdf-stu-task .van-tabs--line .van-tabs__wrap {
-  height: 0.76rem; }
+  height: 0.76rem;
+}
 
 .van-button {
   width: 1.5rem;
   margin-left: 2.44rem;
-  margin-top: 0.52rem; }
+  margin-top: 0.52rem;
+}
 
-/*# sourceMappingURL=resetui.css.map */
+.van-dialog {
+  width: 4.5rem;
+  height: 3.4rem;
+}
+
+.van-dialog h1 {
+  font-weight: 400;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.28rem;
+}
+
+.van-dialog h2 {
+  width: 3.5rem;
+  font-weight: normal;
+  color: #a1a1a1;
+  font-size: 0.22rem;
+  margin: 0 auto 0.2rem;
+}
+
+.van-dialog h2 span {
+  display: inline-block;
+  font-size: 0.22rem;
+  color: #000;
+}
+
+.van-dialog h3 {
+  text-align: center;
+  font-weight: normal;
+  color: #ee7521;
+  font-size: 0.21rem;
+  margin-bottom: 0.3rem;
+}
+
+.van-dialog h4 {
+  font-weight: normal;
+  width: 4.5rem;
+  height: 0.94rem;
+  display: flex;
+  border-top: 1px solid #b1b1b1;
+}
+
+.van-dialog h4 #qing-pA {
+  margin-top: 0;
+  width: 2.25rem;
+  font-size: 0.26rem;
+  text-align: center;
+  line-height: 0.86rem;
+  color: #b1b1b1;
+}
+
+.van-dialog h4 #qing-pB {
+  margin-top: 0;
+  width: 2.25rem;
+  font-size: 0.26rem;
+  text-align: center;
+  line-height: 0.86rem;
+  color: #ee7521;
+  border-left: 1px solid #b1b1b1;
+}

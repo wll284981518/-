@@ -24,6 +24,12 @@ import Physics from"../components/Edit/Edit-kdzl/Physics"
 import English from"../components/Edit/Edit-kdzl/English"
 //约课组件
 import Study from "../components/Study/Study";
+// 2019/12/20---付东飞约课上传资料组件
+import Upload from "../components/Study/Upload.vue";
+// 2019/12/20---付东飞约课课后作业组件
+import Tack from "../components/Study/Tack.vue"
+// 2019/12/20---付东飞约课视频回放组件
+import Playblack from "../components/Study/Playblack.vue"
 //我的组件
 import My from "../components/My/My";
 // 登录组件
@@ -42,12 +48,8 @@ import Information from "../components/My/Information";
 import Attention from "../components/My/Attention";
 import Collection from "../components/My/Collection";
 
-// 我是课程组件的详情页
-// import Details from "../components/Course/Details"
-
-
+//========================================================================================================
 Vue.use(Router);
-
 export default new Router({
   routes: [
     {
@@ -65,10 +67,11 @@ export default new Router({
           name:"Course",
           component:Course,
         },
+        // 约课路由
         {
           path:"/study",
           name:"Study",
-          component:Study,
+          component:Study
         },
         //练习下的路由
         {
@@ -183,6 +186,24 @@ export default new Router({
           path:"/bao",
           name:"bao",
           component:Bao
+        },
+        // 约课上传资料路由
+        { 
+          path:"/upload",
+          name:"Upload",
+          component:Upload
+        },
+        // 课后作业
+        {
+          path:"/tack",
+          name:"Tack",
+          component:Tack
+        },
+        // 课后作业
+        {
+          path:"/playblack",
+          name:"Playblack",
+          component:Playblack
         }
   ]
 })
