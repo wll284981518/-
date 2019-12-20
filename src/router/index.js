@@ -8,6 +8,8 @@ import Home from "../components/home/Home";
 import Xiang from "@/components/home/Xiang"
 //引入立即报名的页面
 import Bao from "@/components/home/Bao"
+//--->首页学习日历
+import Ri from "@/components/home/Ri"
 //课程组件
 import Course from "../components/Course/Course";
 //练习组件
@@ -174,15 +176,23 @@ export default new Router({
           name:"set-message",
           component:Setmessage
         },
+        //-->首页详情页跳转
         {
           path:"/tearch",
           name:"tearch",
           component:Xiang,
         },
+        //--->首页详情页立即报名跳转
          {
           path:"/bao",
           name:"bao",
           component:Bao
+        },
+        //-->首页学习日历跳转
+         {
+          path:"/ri",
+          name:"ri",
+          component:Ri
         }
   ]
 })

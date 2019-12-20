@@ -29,6 +29,9 @@ Vue.use(Toast);
 import { Tab, Tabs } from 'vant';
 Vue.use(Tab).use(Tabs);
 Vue.config.productionTip = false;
+import Calenda from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(Calenda);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
