@@ -37,6 +37,8 @@ import Setmessage from "../components/My/Login/set-message";
 import Information from "../components/My/Information";
 import Attention from "../components/My/Attention";
 import Collection from "../components/My/Collection";
+//设置退出
+import Setup from "../components/My/Setup";
 
 
 
@@ -167,6 +169,11 @@ export default new Router({
       path:"/set-message",
       name:"set-message",
       component:Setmessage
-    }
+    },
+    {
+      path:"/setup",
+      component:Setup
+    },
+    
   ]
 })
