@@ -15,7 +15,11 @@
     }
 </script>
 
+<<<<<<< HEAD
 <style lang="scss" scoped>
+=======
+<style lang="scss">
+>>>>>>> cc30be0c0d34b30f6b6796ecb5f385026bd6b960
   body,html,.index{
     width: 100%;
     height: 100%;

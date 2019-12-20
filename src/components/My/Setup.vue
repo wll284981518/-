@@ -23,6 +23,7 @@
         		this.$router.push("/my")
         	},
         	tc (){
+        		localStorage.removeItem('login')
         		this.$router.push("/home")
         	}
         }

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,CAAC;EACC,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,IAAI;;AAGhB,6CAA+B;EAC7B,MAAM,EAAE,OAAO;;AAGnB,WAAW;EACT,KAAK,EAAE,MAAM;EACb,WAAW,EAAE,OAAO;EACpB,UAAU,EAAE,OAAO",
+"sources": ["../../../../../../12-%E5%AE%9E%E8%AE%AD/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/02-day/Curriculum/src/assets/resetui.scss"],
+"names": [],
+"file": "resetui.css"
+}
