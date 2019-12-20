@@ -125,7 +125,12 @@
 
 <script>
  export default {
-        name: "My"
+		name: "My",
+		data(){
+			return{
+				list:JSON.parse(localStorage.getItem('dl'))||[]
+			}
+		}
     }
 </script>
 

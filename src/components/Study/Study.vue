@@ -1,4 +1,6 @@
 <template>
+    <div>
+      <!-- 约课 -->
     <div class="fdf-study">
 <!--      约课注释-->
       <div class="fdf-stu-header">
@@ -26,9 +28,11 @@
         <Cancel v-show="cancel"></Cancel>
       </div>
     </div>
+    </div>
 </template>
 
-<script>
+<script >
+
   import Nologin from "./Nologin";
   import Already from "./Already";
   import Cancel from "./Cancel";
