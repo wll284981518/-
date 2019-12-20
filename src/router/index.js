@@ -14,6 +14,12 @@ import Course from "../components/Course/Course";
 import Edit from "../components/Edit/Edit";
 import EditKdzl from"../components/Edit/Edit-kdzl/Edit-kdzl"
 import TextGit from"../components/Edit/Edit-kdzl/TextGit"
+import Edittjlx from"../components/Edit/Edit-tjlx/Texttjlx"
+import Editfzmk from"../components/Edit/Edit-fzmk/Textfzmk"
+import Editctjl from"../components/Edit/Edit-ctjl/Textctjl"
+import Editcpjl from"../components/Edit/Edit-cpjl/Textcpjl"
+import Editxtsc from"../components/Edit/Edit-xtsc/Textxtsc"
+
 //题库组件
 import Ples from"../components/Edit/Edit-kdzl/Ples"
 import Limit from"../components/Edit/Edit-kdzl/Limit"
@@ -125,6 +131,31 @@ export default new Router({
           	}
           	]
          },
+          {
+          path:"/xtsc",
+          name:"Editxtsc",
+          component:Editxtsc,
+       },
+       {
+        path:"/tjlx",
+        name:"Edittjlx",
+        component:Edittjlx,
+     },
+     {
+      path:"/ctjl",
+      name:"Editctjl",
+      component:Editctjl,
+   },
+   {
+    path:"/cpjl",
+    name:"Editcpjl",
+    component:Editcpjl,
+    },
+    {
+      path:"/fzmk",
+      name:"Editfzmk",
+      component:Editfzmk,
+  },
   
         {
           path:"/my",
