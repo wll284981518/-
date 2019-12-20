@@ -12,6 +12,10 @@ import Edit from "../components/Edit/Edit";
 import Study from "../components/Study/Study";
 //我的组件
 import My from "../components/My/My";
+// 一对一路由文件
+import Oto from "../components/home/oto/onetoone.vue"
+// 一对一里面搜索文件
+import Serch from "../components/home/oto/serch.vue"
 Vue.use(Router);
 
 export default new Router({
@@ -52,5 +56,15 @@ export default new Router({
         }
       ]
     },
+    {
+      path:"/oto",
+      name:"oto",
+      component:Oto
+    },
+    {
+      path:"/serch",
+      name:"serch",
+      component:Serch
+    }
   ]
 })

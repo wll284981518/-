@@ -34,25 +34,26 @@
 <style lang="scss">
    .foot{
      width: 100%;
-     height: 120px;
+     height: 0.7rem;
      border-top: 1px solid #e1e1e1;
+     background: #fff;
+     padding-top:0.15rem;
      ul{
        width: 100%;
-       height: 110px;
+       height: 0.85rem;
        display: flex;
-	   padding-top: 10px;
        li{
          width: 25%;
-		 img{
-			 width: 40px;
-			 height: 40px;
-			 display: block;
-			 margin: 0 auto;
-		 }
+           img{
+             width: 0.30rem;
+             height: 0.28rem;
+             display: block;
+             margin: 0 auto;
+           }
          p{
-           font-size: 24px;
+           font-size: 0.18rem;
            text-align: center;
-           margin-top: 5px;
+           margin-top: 0.1rem;
          }
        }
      }
