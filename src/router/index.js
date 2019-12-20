@@ -15,7 +15,13 @@ import Course from "../components/Course/Course";
 //练习组件
 import Edit from "../components/Edit/Edit";
 import EditKdzl from"../components/Edit/Edit-kdzl/Edit-kdzl"
-import TextGit from"../components/Edit/Edit-kdzl/TextGit"
+import TextGit from"../components/Edit/Edit-kdzl/Edit-kdzl"
+import Edittjlx from"../components/Edit/Edit-tjlx/Edit-tjlx"
+import Editfzmk from"../components/Edit/Edit-fzmk/Edit-fzmk"
+import Editctjl from"../components/Edit/Edit-ctjl/Edit-ctjl"
+import Editcpjl from"../components/Edit/Edit-cpjl/Edit-cpjl"
+import Editxtsc from"../components/Edit/Edit-xtsc/Edit-xtsc"
+
 //题库组件
 import Ples from"../components/Edit/Edit-kdzl/Ples"
 import Limit from"../components/Edit/Edit-kdzl/Limit"
@@ -45,7 +51,7 @@ import Attention from "../components/My/Attention";
 import Collection from "../components/My/Collection";
 
 // 我是课程组件的详情页
-// import Details from "../components/Course/Details"
+import Details from "../components/Course/Details"
 
 
 Vue.use(Router);
@@ -127,6 +133,31 @@ export default new Router({
           	}
           	]
          },
+          {
+          path:"/xtsc",
+          name:"Editxtsc",
+          component:Editxtsc,
+       },
+       {
+        path:"/tjlx",
+        name:"Edittjlx",
+        component:Edittjlx,
+     },
+     {
+      path:"/ctjl",
+      name:"Editctjl",
+      component:Editctjl,
+   },
+   {
+    path:"/cpjl",
+    name:"Editcpjl",
+    component:Editcpjl,
+    },
+    {
+      path:"/fzmk",
+      name:"Editfzmk",
+      component:Editfzmk,
+  },
   
         {
           path:"/my",
@@ -193,6 +224,13 @@ export default new Router({
           path:"/ri",
           name:"ri",
           component:Ri
+        },
+        
+           {
+          path:"/details",
+          name:"details",
+          component:Details
         }
+        
   ]
 })

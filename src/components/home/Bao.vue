@@ -59,11 +59,16 @@
         <!-- 整体内容布局结束 -->
         </div>
 
+      
+        
+
          <div class="zjb_bao_footer">
             <!-- 尾部布局开始 -->
             <p>立即报名</p>
             <!-- 尾部布局结束 -->
         </div>
+
+
 
       <!-- 跳转立即报名页面布局结束 -->
   </div>
@@ -89,7 +94,7 @@ export default {
             show:false
         }
     },
-    created(){//--<最早操作data数据的生命周期的钩子
+    mounted(){//--<最早操作dom元素的生命周期的钩子
         this.id=this.$route.query.id;//--->详情页传递过来的id
         var timer=new Date();//-->获取当前时间
         var timm=timer.toLocaleString();
@@ -129,8 +134,15 @@ export default {
         ...mapState({
             list:'list'
         })
+    },
+    methods:{
+        zjb_goXiang(){
+            this.$router.go(-1);
+        },
+        zjb_guan(){
+            this.$router.go(-1);
+        }
     }
-   
 }
 </script>
 
@@ -336,5 +348,6 @@ export default {
     line-height: .6rem;
     font-size: .23rem;
     margin-top: 1.6rem;
+    margin-top: .8rem;
 }
 </style>
