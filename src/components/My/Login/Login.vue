@@ -13,6 +13,7 @@
                 <div class="fy_num">
                     <!-- 输入密码 -->
                     <input type="text" placeholder="请输入密码" v-model='fy_dl_pass'>
+                    <!-- fy_dl_pass绑定手机号的值 -->
                 </div>
                 <div class="fy_others">
                     <!-- 跳转找回密码路由 -->
@@ -30,6 +31,8 @@
 </template>
 
 <script>
+    // 引入axios请求
+    import axios from "axios";
     export default {
         name: "login",
         data(){
@@ -55,7 +58,6 @@
                     for(let i=0;i<this.list.length;i++){
                         if(this.fy_dl_sjh===this.list[i].zc_sjh && this.fy_dl_pass===this.list[i].zc_pass){
                             var dl = true
-
                             localStorage.setItem('login',JSON.stringify(dl))
                             this.$router.push('/my')
                             return false
@@ -65,10 +67,6 @@
                     this.fy_dl_sjh=this.fy_dl_pass='';
                     return false
                 }
-                
-                
-               
-              
             }
         }
     }

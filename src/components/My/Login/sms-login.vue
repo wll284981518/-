@@ -12,7 +12,7 @@
                 </div>
                 <div class="fy_num">
                     <input type="password" placeholder="请输入短信验证码">
-                    <span class="fy_sms">获取验证码</span>
+                    <span class="fy_sms" @click="wll_getCode">获取验证码</span>
                 </div>
                 <div class="fy_others">
                     <span>*未注册的手机号将自动注册</span>
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+    // 引入axios请求
+    import axios from "axios";
     export default {
         name: "sms-login",
         data(){
@@ -38,20 +40,39 @@
             }
         },
         methods:{
+            wll_getCode(){
+                axios.post("https://test.365msmk.com/api/app/smsCode",{
+                    mobile:this.fy_zc_sjh,
+                    sms_type: "login",
+                }).then((res) => {
+                    console.log(res);
+                    // 在这里显示smsCode
+                    // {code: 200, msg: "操作成功", data: true}
+                })
+            },
             // 跳转到登录页面
-            fy_toLogin(){
-                this.$router.push("/login")
+            fy_toSetpass(){
+                // this.$router.push("/login")
+                axios.post("https://test.365msmk.com/api/app/login",{
+                    mobile:this.fy_zc_sjh,
+                    sms_type: "142794",
+                    type: 2   
+                }).then((res) => {
+                    console.log(res);
+                    // 在这里显示smsCode
+                    // {code: 200, msg: "操作成功", data: true}
+                })
             },
             // 跳转到设置密码页面
-            fy_toSetpass(){
-                var arr = JSON.parse(localStorage.getItem('dl'))||[];
-                if(this.fy_zc_sjh==''){
-                    alert("手机号不能为空")
-                    return false
-                }
+            // fy_toSetpass(){
+            //     var arr = JSON.parse(localStorage.getItem('dl'))||[];
+            //     if(this.fy_zc_sjh==''){
+            //         alert("手机号不能为空")
+            //         return false
+            //     }
               
-                this.$router.push({path:'/set-pass',query:{zc_sjh:this.fy_zc_sjh}})
-            }
+            //     this.$router.push({path:'/set-pass',query:{zc_sjh:this.fy_zc_sjh}})
+            // }
         }
     }
 </script>
