@@ -15,7 +15,8 @@
     }
 </script>
 
-<style lang="scss">
+
+<style lang="scss" scoped>
   body,html,.index{
     width: 100%;
     height: 100%;

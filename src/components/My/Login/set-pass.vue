@@ -1,18 +1,23 @@
 <template>
     <div class="set-pass">
         <div class="fy_content">
+            <!-- 设置密码头部 -->
             <div class="fy_header">
                 <h3>设置密码</h3>
+                <!-- 点击跳转到信息填写路由 -->
                 <span  @click='fy_toSetmessage()'>跳过</span>
             </div>
+            <!-- 设置密码主体 -->
             <div class="fy_box">
                 <div class="fy_num">
-                    <input type="text" maxlength="11" placeholder="请输入登录密码">
+                    <input type="text" maxlength="11" placeholder="请输入登录密码" v-model='fy_zc_pass'>
                 </div>
                 <div class="fy_num">
                     <input type="text" maxlength="11" placeholder="请再次输入密码">
                 </div>
+                <!-- 确定按钮 -->
                 <div class="fy_login">
+                    <!-- 点击跳转到信息填写路由 -->
                     <van-button round type="warning" eb6100 size='large' class="fy_button" @click='fy_toSetmessage()'>确定</van-button>
                 </div>
             </div>
@@ -23,8 +28,26 @@
 <script>
     export default {
         name: "set-pass",
+        data(){
+            return{
+                fy_zc_pass:"",
+                id:0
+              
+            }
+        },
+        mounted(){
+            console.log(this.$route.query.zc_sjh)
+        },
         methods:{
+            // 跳转到信息填写路由
             fy_toSetmessage(){
+                console.log(this.$route.query.zc_sjh)
+                var arr = JSON.parse(localStorage.getItem('dl'))||[];
+                this.id+=1;
+                var obj = {'id':this.id,'zc_sjh':this.$route.query.zc_sjh,'zc_pass':this.fy_zc_pass}
+                console.log(obj)
+                arr.unshift(obj)
+                localStorage.setItem('dl',JSON.stringify(arr))
                 this.$router.push('/set-message')
             }
         }
@@ -37,6 +60,7 @@ html,body,.set-pass{
     height: 100%;
     display: flex;
     flex-direction: column;
+    background: #fff;
 }
 .fy_content{
     width: 100%;
@@ -91,7 +115,7 @@ html,body,.set-pass{
         .fy_button{
             width: 80%;
             font-size: 0.25rem;
-            
+             margin-left: 0;
         }
     }
 

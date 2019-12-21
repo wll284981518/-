@@ -6,8 +6,9 @@ Vue.use(vuex);
 //-->创建
 var store=new vuex.Store({
     state:{
-        list:[]
+        list:[],
     }
+    
 })
 
 //--->导出

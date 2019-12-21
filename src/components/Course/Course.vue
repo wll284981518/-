@@ -1,9 +1,11 @@
+
 <template>
+
         <div class="wll_Course">
             <div class="wll_top">
                 <div class="wll_tsk">
                     <h2>特色课</h2>
-                    <img src="../../../static/course-img/wll_ glass.jpg" alt="">
+                    <img src="../../../static/course-img/wll_ glass.jpg" alt="" @click="add()">
                 </div>
                 <div class="wll_kj">
                     <!-- 下拉菜单 -->
@@ -110,6 +112,11 @@
                 this.item=msg.data.data;
             })
         },
+        methods:{
+            add(){
+                this.$router.push({path:"/serch"})
+            }
+        }
     }
 </script>
 
