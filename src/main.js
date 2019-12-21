@@ -27,9 +27,17 @@ Vue.use(Icon);
 //点击关注，提示已关注
 import { Toast } from 'vant';
 Vue.use(Toast);
+// 引入课程的框架
+import { DropdownMenu, DropdownItem } from 'vant';
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+import { Dialog } from 'vant'
+Vue.use(Dialog);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })

@@ -6,10 +6,41 @@
                     <img src="../../../static/course-img/wll_ glass.jpg" alt="">
                 </div>
                 <div class="wll_kj">
+                    <!-- 下拉菜单 -->
                     <van-dropdown-menu>
-                        <van-dropdown-item title="分类" v-model="wll_value1" :options="wll_option1" />
+                        <!-- 分类 -->
+                        <van-dropdown-item title="分类">
+                            <div class="wll_dl">
+                                <h2>年级</h2>
+                                <ul>
+                                    <li v-for="(item,key) in item.grade" :key="key"> 
+                                        {{item}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="wll_dl">
+                                <h2>学科</h2>
+                                <ul>
+                                    <li v-for="(item,key) in item.subject" :key="key"> 
+                                        {{item}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="wll_button">
+                                <van-button type="default">重置</van-button>
+                                <van-button type="warning">确定</van-button>
+                            </div>
+                        </van-dropdown-item>
                         <van-dropdown-item title="排序" v-model="wll_value2" :options="wll_option2" />
-                        <van-dropdown-item title="筛选" v-model="wll_value3" :options="wll_option3" />
+                        <van-dropdown-item title="筛选" >
+                            <div class="wll_dy">
+                                 <ul>
+                                    <li v-for="(item,key) in item.flish" :key="key"> 
+                                        {{item}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </van-dropdown-item>
                     </van-dropdown-menu>
                 </div>
             </div>
@@ -20,8 +51,9 @@
                             <div>
                                 <h2>{{item.name}}</h2>
                             </div>
-                            <div>
-                                <span>{{item.time}}</span>
+                            <div >
+                                <img v-show="(item.time==' '?false:true)" class="wll_img1" :src="'../../../static/course-img/'+item.imgage" alt="">
+                                <span v-show="(item.time==' '?false:true)">{{item.time}}</span>
                                 <span>{{item.lesson}}</span>
                             </div>
                             <div>
@@ -34,7 +66,10 @@
                             </div>
                             <div>
                                 <p>{{item.count}}</p>
-                                <p>{{item.price}}</p>
+                                <p>
+                                    <img class="wll_img1" :src="'../../../static/course-img/'+item.imga" alt="">
+                                    <span :style="{'color':(item.price=='免费'?'green':'red')}">{{item.price}}</span>
+                                </p>
                             </div>
                      </router-link>
                    </li>
@@ -50,33 +85,29 @@
         name: "Course",
         data() {
             return {
-                wll_value1: 0,
-                wll_value2: 'a',
-                wll_value3: 'I',
-                wll_option1: [
-                    { text: '年级', value: 0 },
-                    { text: '学科', value: 1 },
-                ],
+                wll_value2: 0,
                 wll_option2: [
-                    { text: '综合排序', value: 'a' },
-                    { text: '最新', value: 'b' },
-                    { text: '最热', value: 'c' },
-                    { text: '价格从低到高', value: 'd' },
-                    { text: '价格从高到低', value: 'e' },
+                    { text: '综合排序', value: '0' },
+                    { text: '最新', value: '1' },
+                    { text: '最热', value: '2' },
+                    { text: '价格从低到高', value: '3' },
+                    { text: '价格从高到低', value: '4' },
                 ],
-                wll_option3: [
-                    { text: '默认排序', value: 'I' },
-                    { text: '好评排序', value: 'II' },
-                    { text: '销量排序', value: 'IIi' },
-                ],
+        
                 collect:JSON.parse(localStorage.getItem("collect")) || [],
-                wll_course:[]
+                wll_course:[],
+                flag:true,
+                item:[]
             }
         },
         mounted() {
-            axios.get("../../../static/date.json").then((msg)=>{
+            axios.get("../../../static/Course.json/date.json").then((msg)=>{
                 console.log(msg);
                 this.wll_course=msg.data.data;
+            })
+            axios.get("../../../static/Course.json/list.json").then((msg)=>{
+                console.log(msg);
+                this.item=msg.data.data;
             })
         },
     }
@@ -114,7 +145,76 @@
                 .van-dropdown-menu{
                     width: 100%;
                     height: 0.72rem;
-
+                    .van-dropdown-item{
+                        .wll_dl{
+                            width: 100%;
+                            h2{
+                                width: 5.8rem;
+                                margin: 0 auto;
+                                padding-top: 0.28rem;
+                                color: #4e4e4e;
+                                font-weight: normal;
+                            }
+                            ul{
+                                width: 5.8rem;
+                                // height: 1.8rem;
+                                margin: 0.3rem auto;
+                                display: block;
+                                border-bottom: 1px solid #eeeeee;
+                                display: flex;
+                                flex-wrap: wrap;
+                                li{
+                                    width: 1.18rem;
+                                    height: 0.56rem;
+                                    text-align: center;
+                                    line-height: 0.56rem;
+                                    background: #f5f5f5;
+                                    margin-right: 0.26rem;
+                                    margin-bottom: 0.18rem;
+                                }
+                                li:hover{
+                                    color: #eb5b00;
+                                    background: #ebeefe;
+                                }
+                            }
+                        }
+                        .wll_button{
+                            display: flex;
+                            width: 100%;
+                            height: 1rem;
+                            justify-content: space-around;
+                            align-items: center;
+                            .van-button {
+                                width: 1.5rem;
+                                margin-left: 0rem; 
+                                margin-top: 0rem; 
+                            }
+                        }
+                        .wll_dy{
+                            width: 100%;
+                            ul{
+                                width: 5.8rem;
+                                margin: 0.3rem auto;
+                                display: block;
+                                display: flex;
+                                flex-wrap: wrap;
+                                padding-bottom: 0.3rem;
+                                li{
+                                    width: 1.18rem;
+                                    height: 0.56rem;
+                                    margin-bottom: 0.16rem;
+                                    text-align: center;
+                                    line-height: 0.56rem;
+                                    background: #f5f5f5;
+                                    margin-right: 0.26rem;
+                                }
+                                 li:hover{
+                                    color: #eb5b00;
+                                    background: #ebeefe;
+                                }
+                            }
+                        }
+                    }
                 }
                 .van-ellipsis{
                     height: 0.72rem;
@@ -146,19 +246,37 @@
                             margin: 0 auto;
                         }
                         div:nth-of-type(1){
-                            height: 0.52rem;
+                            margin-top: 0.56rem;
                             h2{
-                                height: 0.28rem;
                                 padding-top: 0.26rem;
-                                color: #000000;
+                                color: #737373;
+                                font-size: 0.26rem;
+                                font-weight: normal;
                             }
                         
                         }
                         div:nth-of-type(2){
-                            padding-top: 0.16rem;
-                            p{
-                                color: #666666;
+                            padding-top: 0.18rem;
+                            display: flex;
+                            align-items: center;
+                            img{
+                                width: 0.18rem;
+                                height: 0.18rem;
+                                margin-right: 0.1rem;
                             }
+                            span{
+                                color: #666666;
+                                font-size: 0.18rem;
+                                line-height: 0.18rem;
+                            }
+                            span:nth-of-type(1){
+                                width: 3rem;
+                                height: 0.18rem;
+                                border-right: 1px solid #d0d0d0;
+                                display: block;
+                                margin-right: 0.16rem;
+                            }
+                           
                         }
                         div:nth-of-type(3){
                             width: 5.45rem;
@@ -185,6 +303,7 @@
                                         color: #b0b0b0;
                                         line-height: 0.36rem;
                                         margin-left: 20px; 
+                                        font-size: 0.18rem;
                                     }
                                 }
                             }
@@ -194,13 +313,25 @@
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-                            p{
+                            p:nth-of-type(1){
                                 height: 94px;
                                 line-height: 94px;
                                 color: #8c8c8c;
+                                font-size: 0.16rem;
                             }
                             p:nth-of-type(2){
-                                color: #43a425;
+                                display: flex;
+                                img{
+                                    width: 0.26rem;
+                                    height: 0.26rem;
+                                    margin-right: 0.08rem;
+                                }
+                                
+                                span{
+                                    color: #ee1919;
+                                    font-size: 0.18rem;
+                                    line-height: 0.26rem;
+                                }
                             }
                         }
                     }
@@ -208,10 +339,23 @@
             }
         }
     }
+    // 框架样式
     .van-dropdown-item__option--active, .van-dropdown-item__option--active .van-dropdown-item__icon {
         color: red;
     }
     .van-dropdown-menu__title--active {
         color: red;
+    }
+   .van-cell__title {
+        display: flex;
+        justify-content: space-around;
+        span{
+            width: 30%;
+            text-align: center;
+            display: inline-block;
+        }
+    }
+    .van-cell__value{
+        -webkit-flex: 0;
     }
 </style>

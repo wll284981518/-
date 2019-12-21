@@ -10,6 +10,10 @@ import Xiang from "@/components/home/Xiang"
 import Bao from "@/components/home/Bao"
 //课程组件
 import Course from "../components/Course/Course";
+// 我是课程组件的详情页
+import Apply from "../components/Course/apply"
+// 我是课程组件的详情页的立即注册
+import Details from "../components/Course/Details"
 //练习组件
 import Edit from "../components/Edit/Edit";
 import EditKdzl from"../components/Edit/Edit-kdzl/Edit-kdzl"
@@ -41,10 +45,6 @@ import Setmessage from "../components/My/Login/set-message";
 import Information from "../components/My/Information";
 import Attention from "../components/My/Attention";
 import Collection from "../components/My/Collection";
-
-// 我是课程组件的详情页
-// import Details from "../components/Course/Details"
-
 
 Vue.use(Router);
 
@@ -131,6 +131,7 @@ export default new Router({
           name:"My",
           component:My
         },
+        
         {
           path:"/",
           redirect:"/home"
@@ -183,6 +184,16 @@ export default new Router({
           path:"/bao",
           name:"bao",
           component:Bao
-        }
+        },
+        {
+          path:"/details",
+          name:"details",
+          component: Details
+        },
+        {
+          path:"/apply",
+          name:"apply",
+          component: Apply
+        },
   ]
 })
